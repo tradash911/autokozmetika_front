@@ -55,6 +55,8 @@ export const StyledText = styled.p`
   font-family: "montserrat";
   color: var(--white);
   text-transform: uppercase;
+  width: 30%;
+  text-align: center;
 `;
 
 export const StyledCta = styled.button`
