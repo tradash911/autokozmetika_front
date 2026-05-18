@@ -1,0 +1,63 @@
+import { createGlobalStyle, css } from "styled-components";
+
+const GlobalStyles = createGlobalStyle`
+
+    *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+  font-size: 62.5%; /* 10px = 1rem */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+   body {
+    line-height: 1.5;
+    background: #fff;
+    color: #111;
+  }
+   p {
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+    ul, ol {
+    list-style: none;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+    input, button, textarea, select {
+    font: inherit;
+    border: none;
+    outline: none;
+    background: none;
+  }
+
+  button {
+    cursor: pointer;
+  }
+:root {
+   --blue:#1A9BDC;
+   --dark-blue:#60A5FA;
+   --orange:#FD7E14;
+   --soft-black:#111111;
+   --white:#ffffff;
+   --black:#0F172A;
+   --grey:#F3F4F6;
+
+
+   
+
+}
+`;
+
+export default GlobalStyles;
