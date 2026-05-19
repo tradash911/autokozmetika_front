@@ -48,7 +48,9 @@ function Hero() {
       <StyledCta>
         Szolgáltatásaink <img src="button_arrow.svg" alt="" />
       </StyledCta>
-      <StyledDownArrow src="down_arrow.svg" alt="" />
+      <a href="#about">
+        <StyledDownArrow src="down_arrow.svg" alt="" />
+      </a>
     </StyledHero>
   );
 }

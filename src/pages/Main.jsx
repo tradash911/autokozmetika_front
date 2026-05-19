@@ -3,10 +3,8 @@ import Hero from "../Components/sections/Hero";
 import Footer from "../Components/sections/Footer";
 import { useQuery } from "@tanstack/react-query";
 import { getMainCategoriesWithSubcategories } from "../api/services";
-
-const StyledMain = styled.main`
-  color: var(--brown);
-`;
+import AboutUs from "../Components/sections/AbutUs";
+import { StyledMain } from "./main.styles";
 
 function Main() {
   const { isLoading, data } = useQuery({
@@ -18,7 +16,9 @@ function Main() {
   return (
     <>
       <Hero />
-      <StyledMain>valami</StyledMain>
+      <StyledMain>
+        <AboutUs />
+      </StyledMain>
       <Footer />
     </>
   );

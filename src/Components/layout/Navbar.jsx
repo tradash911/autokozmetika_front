@@ -18,7 +18,14 @@ const Navbar = forwardRef(({ isOpen, setIsOpen }, ref) => {
       <div className="logo">LOGO</div>
       <StyledMenu>
         <li>
-          <a href="">Bemutatkozás</a>
+          <a
+            onClick={() => {
+              setIsOpen(false);
+            }}
+            href="#about"
+          >
+            Bemutatkozás
+          </a>
         </li>
         <li>
           <a href="">Szolgáltatások</a>
