@@ -7,7 +7,7 @@ export const StyledHero = styled.header`
     linear-gradient(
       180deg,
       rgba(0, 0, 0, 0.24) 0%,
-      rgba(26, 155, 220, 0.24) 100%
+      rgba(26, 155, 220, 0.41) 100%
     ),
     url("hero_bg.jpg");
   background-size: cover;
@@ -16,6 +16,14 @@ export const StyledHero = styled.header`
   align-items: center;
   flex-direction: column;
   gap: 5rem;
+  position: relative;
+  @media (max-width: 1400px) {
+    gap: 2.4rem;
+    padding-top: 15rem;
+  }
+  @media (max-width: 432px) {
+    gap: 4rem;
+  }
 `;
 
 export const StyledH1 = styled.h1`
@@ -25,6 +33,43 @@ export const StyledH1 = styled.h1`
   color: var(--white);
   text-transform: uppercase;
   position: relative;
+  z-index: 1;
+  span {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      width: 108%;
+      height: 95%;
+      background-color: var(--blue);
+      position: absolute;
+      right: -6%;
+      bottom: 0;
+      z-index: -1;
+      clip-path: polygon(0 0, 93% 0, 100% 100%, 0% 100%);
+    }
+  }
+  @media (max-width: 1400px) {
+    font-size: 5.5rem;
+  }
+
+  @media (max-width: 1082px) {
+    font-size: 4.5rem;
+  }
+  @media (max-width: 842px) {
+    font-size: 5.3rem;
+    width: 90%;
+    text-align: center;
+  }
+  @media (max-width: 842px) {
+    font-size: 3.3rem;
+  }
+  @media (max-width: 432px) {
+    font-size: 3.2rem;
+    width: 94%;
+  }
+
   &::after {
     content: "NO DIRTY CARS";
     font-size: 15rem;
@@ -36,17 +81,19 @@ export const StyledH1 = styled.h1`
     left: 0;
     bottom: 20%;
     letter-spacing: 14%;
-
     opacity: 20%;
+    z-index: -2;
+    @media (max-width: 1400px) {
+      font-size: 11rem;
+    }
+    @media (max-width: 1100px) {
+      font-size: 9.5rem;
+      letter-spacing: 18%;
+    }
+    @media (max-width: 842px) {
+      display: none;
+    }
   }
-`;
-
-export const StyledWaterMark = styled.h2`
-  font-size: 16rem;
-  font-family: "oswald";
-  text-transform: uppercase;
-  color: transparent;
-  -webkit-text-stroke: 2px red;
 `;
 
 export const StyledText = styled.p`
@@ -55,8 +102,17 @@ export const StyledText = styled.p`
   font-family: "montserrat";
   color: var(--white);
   text-transform: uppercase;
-  width: 30%;
+  width: 35%;
   text-align: center;
+  @media (max-width: 1400px) {
+    font-size: 1.3rem;
+  }
+  @media (max-width: 842px) {
+    width: 70%;
+  }
+  @media (max-width: 432px) {
+    font-size: 1rem;
+  }
 `;
 
 export const StyledCta = styled.button`
@@ -68,7 +124,7 @@ export const StyledCta = styled.button`
   border: 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-transform: uppercase;
-  padding: 2rem 4rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,6 +134,36 @@ export const StyledCta = styled.button`
   &:hover {
     transform: scale(1.02);
   }
+  @media (max-width: 1400px) {
+    font-size: 1.6rem;
+  }
+  @media (max-width: 432px) {
+    font-size: 1.3rem;
+    padding: 0.4rem 1rem;
+  }
+`;
+
+export const StyledDownArrow = styled.img`
+  cursor: pointer;
+  @media (max-width: 432px) {
+    transform: scale(0.7);
+  }
 `;
 
 export const StyledArrow = styled.img``;
+
+export const StyledHamburger = styled.img`
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  display: none;
+  pointer-events: none;
+
+  @media (max-width: 1100px) {
+    display: block;
+    pointer-events: all;
+  }
+  @media (max-width: 432px) {
+    transform: scale(0.7);
+  }
+`;

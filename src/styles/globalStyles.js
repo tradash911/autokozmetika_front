@@ -9,11 +9,14 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html, body {
-    height: 100%;
-  font-size: 62.5%; /* 10px = 1rem */
+    
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
+    
+    font-size: 62.5%;
+  
+
   }
    body {
     line-height: 1.5;

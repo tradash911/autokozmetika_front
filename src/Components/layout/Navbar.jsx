@@ -1,19 +1,43 @@
-import { StyledMenu, StyledNavbar } from "./navbar.styles";
+import { forwardRef } from "react";
+import {
+  StyledCloseMobilMenu,
+  StyledMenu,
+  StyledNavbar,
+} from "./navbar.styles";
 
-function Navbar() {
+const Navbar = forwardRef(({ isOpen, setIsOpen }, ref) => {
   return (
-    <StyledNavbar>
+    <StyledNavbar $isOpen={isOpen} ref={ref}>
+      <StyledCloseMobilMenu
+        onClick={() => {
+          setIsOpen(!isOpen);
+        }}
+        src="close.svg"
+        alt="Mobil menü bezárása ikon"
+      />
       <div className="logo">LOGO</div>
       <StyledMenu>
-        <li>Bemutatkozás</li>
-        <li>Szolgáltatások</li>
-        <li>Galéria</li>
-        <li>Elérhetőségek</li>
-        <li>ÁSZF</li>
-        <li>ÁRLISTA</li>
+        <li>
+          <a href="">Bemutatkozás</a>
+        </li>
+        <li>
+          <a href="">Szolgáltatások</a>
+        </li>
+        <li>
+          <a href="">Galéria</a>
+        </li>
+        <li>
+          <a href="">Elérhetőségek</a>
+        </li>
+        <li>
+          <a href="">ÁSZF</a>
+        </li>
+        <li>
+          <a href="">ÁRLISTA</a>
+        </li>
       </StyledMenu>
     </StyledNavbar>
   );
-}
+});
 
 export default Navbar;
