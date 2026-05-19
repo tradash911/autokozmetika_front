@@ -5,6 +5,8 @@ import { useQuery } from "@tanstack/react-query";
 import { getMainCategoriesWithSubcategories } from "../api/services";
 import AboutUs from "../Components/sections/AbutUs";
 import { StyledMain } from "./main.styles";
+import SectionTitle from "../Components/layout/SectionTitle";
+import Services from "../Components/sections/Services";
 
 function Main() {
   const { isLoading, data } = useQuery({
@@ -18,6 +20,7 @@ function Main() {
       <Hero />
       <StyledMain>
         <AboutUs />
+        <Services />
       </StyledMain>
       <Footer />
     </>

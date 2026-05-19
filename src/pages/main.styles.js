@@ -4,6 +4,9 @@ export const StyledMain = styled.main`
   color: var(--brown);
   padding: 0 15rem;
   margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20rem;
 
   @media (max-width: 1400px) {
     padding: 0 10rem;

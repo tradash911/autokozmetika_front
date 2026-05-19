@@ -1,4 +1,5 @@
 import Counter from "../layout/Counter";
+import SectionTitle from "../layout/SectionTitle";
 import {
   StyledAbutUsWrapper,
   StyledContent,

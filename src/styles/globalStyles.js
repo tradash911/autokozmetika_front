@@ -48,6 +48,8 @@ const GlobalStyles = createGlobalStyle`
   button {
     cursor: pointer;
   }
+ 
+ 
 :root {
    --blue:#1A9BDC;
    --dark-blue:#60A5FA;
