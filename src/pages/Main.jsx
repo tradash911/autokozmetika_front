@@ -7,21 +7,21 @@ import AboutUs from "../Components/sections/AbutUs";
 import { StyledMain } from "./main.styles";
 import SectionTitle from "../Components/layout/SectionTitle";
 import Services from "../Components/sections/Services";
-import Galery from "../Components/sections/Galery";
+import Galery from "../Components/sections/Gallery";
 
 function Main() {
   const { isLoading, data } = useQuery({
     queryFn: getMainCategoriesWithSubcategories,
     queryKey: ["getMainCategoriesWithSubcategoires"],
   });
-  console.log(data);
+
   if (isLoading) return <h1>das</h1>;
   return (
     <>
       <Hero />
       <StyledMain>
         <AboutUs />
-        <Services />
+        <Services data={data} />
         <Galery />
       </StyledMain>
       <Footer />

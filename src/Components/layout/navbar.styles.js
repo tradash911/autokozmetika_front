@@ -14,7 +14,7 @@ export const StyledNavbar = styled.nav`
     top: 0;
     right: 0;
     height: 100dvh;
-    width: 50%;
+    width: 70%;
     background-color: #fff;
     display: flex;
     flex-direction: column;

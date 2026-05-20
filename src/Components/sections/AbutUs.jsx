@@ -10,7 +10,7 @@ import {
 
 function AboutUs() {
   return (
-    <StyledAbutUsWrapper id="about">
+    <StyledAbutUsWrapper id="bemutatkozas">
       <StyledImage src="work.png" />
       <StyledContent>
         <div className="title-wrapper">

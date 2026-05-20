@@ -66,7 +66,7 @@ export const StyledH1 = styled.h1`
     font-size: 3.3rem;
   }
   @media (max-width: 432px) {
-    font-size: 3.2rem;
+    font-size: 5rem;
     width: 94%;
   }
 

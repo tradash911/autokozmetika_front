@@ -1,8 +1,8 @@
-import { StyledGaleryWrapper } from "./galery.styles";
+import { StyledGaleryWrapper } from "./gallery.styles";
 
-function Galery() {
+function Gallery() {
   return (
-    <StyledGaleryWrapper>
+    <StyledGaleryWrapper id={"galéria"}>
       <div className="title-wrapper">
         <h1>Munkáink</h1>
       </div>
@@ -23,4 +23,4 @@ function Galery() {
   );
 }
 
-export default Galery;
+export default Gallery;
