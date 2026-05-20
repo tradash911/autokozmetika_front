@@ -1,11 +1,11 @@
-import SectionTitle from "../layout/SectionTitle";
-import { ServicesWrapper } from "./services.styles";
+import StyledSectionTitle from "../layout/SectionTitle";
+import { StyledServiceWrapper } from "./services.styles";
 
 function Services() {
   return (
-    <ServicesWrapper>
-      <SectionTitle>Szolgáltatásaink</SectionTitle>
-    </ServicesWrapper>
+    <StyledServiceWrapper>
+      <StyledSectionTitle>Szolgáltatásaink</StyledSectionTitle>
+    </StyledServiceWrapper>
   );
 }
 
