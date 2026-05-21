@@ -2,14 +2,12 @@ import { useState } from "react";
 import StyledSectionTitle from "../layout/SectionTitle";
 import { StyledServiceWrapper, StyledTypeButton } from "./services.styles";
 import switchPrice from "../../utils/switchPrice";
-import { AnimatePresence, motion } from "motion/react";
 
 import Test from "../../styles/animatedElements.jsx";
 
 function Services({ data }) {
   const [isActive, setIsActive] = useState(false);
   const [selected, setSelected] = useState("normal");
-  console.log(data);
 
   return (
     <StyledServiceWrapper id="szolgaltatasok">

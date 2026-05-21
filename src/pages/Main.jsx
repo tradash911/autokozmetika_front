@@ -9,14 +9,25 @@ import SectionTitle from "../Components/layout/SectionTitle";
 import Services from "../Components/sections/Services";
 import Galery from "../Components/sections/Gallery";
 import Contact from "../Components/sections/Contact";
+import { getSettings } from "../api/settings";
+import News from "../Components/sections/News.jsx";
+import { getNews } from "../api/news.js";
 
 function Main() {
   const { isLoading, data } = useQuery({
     queryFn: getMainCategoriesWithSubcategories,
     queryKey: ["getMainCategoriesWithSubcategoires"],
   });
+  const { isLoading: isSettingsLoading, data: settingsData } = useQuery({
+    queryFn: getSettings,
+    queryKey: ["getSettings"],
+  });
+  const { isLoading: isNewsLoading, data: newsData } = useQuery({
+    queryFn: getNews,
+    queryKey: ["getNews"],
+  });
 
-  if (isLoading) return <h1>das</h1>;
+  if (isLoading || isSettingsLoading || isNewsLoading) return <h1>das</h1>;
   return (
     <>
       <Hero />
@@ -24,7 +35,8 @@ function Main() {
         <AboutUs />
         <Services data={data} />
         <Galery />
-        <Contact />
+        <Contact settingsData={settingsData} />
+        <News newsData={newsData} />
       </StyledMain>
       <Footer />
     </>

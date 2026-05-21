@@ -45,11 +45,11 @@ function Hero() {
         Prémium autómosási és autókozmetikai szolgáltatásokat kínálunk, amelyek
         ragyogóvá varázsolják autódat.
       </StyledText>
-      <StyledCta>
-        <a href="#szolgaltatasok">
+      <a href="#szolgaltatasok">
+        <StyledCta>
           <span>Szolgáltatásaink</span> <img src="button_arrow.svg" alt="" />
-        </a>
-      </StyledCta>
+        </StyledCta>
+      </a>
       <a href="#bemutatkozas">
         <StyledDownArrow src="down_arrow.svg" alt="" />
       </a>
