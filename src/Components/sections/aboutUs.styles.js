@@ -40,12 +40,18 @@ export const StyledContent = styled.div`
     align-items: center;
     padding-left: 5rem;
     border-radius: 2px;
+    @media (max-width: 500px) {
+      padding-left: 2rem;
+    }
     h1 {
       font-family: "oswald";
       color: var(--white);
       text-transform: uppercase;
       font-weight: 500;
       letter-spacing: 4%;
+      @media (max-width: 500px) {
+        font-size: 3.1rem;
+      }
     }
   }
 `;

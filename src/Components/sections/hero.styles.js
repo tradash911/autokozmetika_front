@@ -21,6 +21,9 @@ export const StyledHero = styled.header`
     gap: 2.4rem;
     padding-top: 15rem;
   }
+  @media (max-width: 600px) {
+    padding-top: 5rem;
+  }
   @media (max-width: 432px) {
     gap: 4rem;
   }
@@ -63,7 +66,10 @@ export const StyledH1 = styled.h1`
     text-align: center;
   }
   @media (max-width: 842px) {
-    font-size: 3.3rem;
+    font-size: 7rem;
+  }
+  @media (max-width: 842px) {
+    font-size: 6rem;
   }
   @media (max-width: 432px) {
     font-size: 5rem;

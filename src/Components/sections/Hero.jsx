@@ -46,9 +46,11 @@ function Hero() {
         ragyogóvá varázsolják autódat.
       </StyledText>
       <StyledCta>
-        Szolgáltatásaink <img src="button_arrow.svg" alt="" />
+        <a href="#szolgaltatasok">
+          <span>Szolgáltatásaink</span> <img src="button_arrow.svg" alt="" />
+        </a>
       </StyledCta>
-      <a href="#about">
+      <a href="#bemutatkozas">
         <StyledDownArrow src="down_arrow.svg" alt="" />
       </a>
     </StyledHero>

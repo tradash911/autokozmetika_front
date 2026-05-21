@@ -2,6 +2,9 @@ import { useState } from "react";
 import StyledSectionTitle from "../layout/SectionTitle";
 import { StyledServiceWrapper, StyledTypeButton } from "./services.styles";
 import switchPrice from "../../utils/switchPrice";
+import { AnimatePresence, motion } from "motion/react";
+
+import Test from "../../styles/animatedElements.jsx";
 
 function Services({ data }) {
   const [isActive, setIsActive] = useState(false);
@@ -41,16 +44,21 @@ function Services({ data }) {
             <img src="big_car.svg" alt="" />
           </StyledTypeButton>
         </nav>
-        <div>
+        <div className="category-wrapper">
           {data.map((data, index) => {
             return (
-              <div key={index}>
+              <div className="category" key={index}>
                 <h1> {data.main_category_name}</h1>
                 <ul>
                   {data.subcategory.map((subcat, index) => (
                     <li key={index}>
-                      <span>{subcat.subcategory_name}</span>{" "}
-                      <span>{switchPrice(selected, subcat)}</span>{" "}
+                      <img src="corner_arrow.svg" alt="" />
+                      <div className="wrapper">
+                        <span>{subcat.subcategory_name}</span>{" "}
+                        <span className="price">
+                          {switchPrice(selected, subcat)} Forint
+                        </span>{" "}
+                      </div>
                     </li>
                   ))}
                 </ul>

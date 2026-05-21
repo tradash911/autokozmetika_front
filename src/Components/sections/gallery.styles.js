@@ -30,12 +30,14 @@ export const StyledGaleryWrapper = styled.section`
     padding-left: 5rem;
     border-radius: 2px;
     grid-column: 2/4;
-
+    height: 78px;
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
       grid-row: 1;
       grid-column: 1/-1;
     }
-
+    @media (max-width: 500px) {
+      padding-left: 2rem;
+    }
     h1 {
       font-family: "oswald";
       color: var(--white);
@@ -43,6 +45,9 @@ export const StyledGaleryWrapper = styled.section`
       font-weight: 500;
       font-size: 3.6rem;
       letter-spacing: 4%;
+      @media (max-width: 500px) {
+        font-size: 3.1rem;
+      }
     }
   }
   button {

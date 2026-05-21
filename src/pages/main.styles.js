@@ -6,7 +6,7 @@ export const StyledMain = styled.main`
   margin-top: 5rem;
   display: flex;
   flex-direction: column;
-  gap: 20rem;
+  gap: 10rem;
 
   @media (max-width: 1400px) {
     padding: 0 10rem;
@@ -19,5 +19,6 @@ export const StyledMain = styled.main`
   }
   @media (max-width: 1100px) {
     padding: 0 2rem;
+    gap: 10rem;
   }
 `;

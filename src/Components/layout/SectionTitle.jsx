@@ -9,6 +9,9 @@ const StyledWrapper = styled.div`
   align-items: center;
   padding-left: 5rem;
   border-radius: 2px;
+  @media (max-width: 500px) {
+    padding-left: 2rem;
+  }
   h1 {
     font-family: "oswald";
     color: var(--white);
@@ -16,6 +19,9 @@ const StyledWrapper = styled.div`
     font-weight: 500;
     font-size: 3.6rem;
     letter-spacing: 4%;
+    @media (max-width: 500px) {
+      font-size: 3rem;
+    }
   }
 `;
 

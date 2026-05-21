@@ -8,6 +8,7 @@ import { StyledMain } from "./main.styles";
 import SectionTitle from "../Components/layout/SectionTitle";
 import Services from "../Components/sections/Services";
 import Galery from "../Components/sections/Gallery";
+import Contact from "../Components/sections/Contact";
 
 function Main() {
   const { isLoading, data } = useQuery({
@@ -23,6 +24,7 @@ function Main() {
         <AboutUs />
         <Services data={data} />
         <Galery />
+        <Contact />
       </StyledMain>
       <Footer />
     </>
