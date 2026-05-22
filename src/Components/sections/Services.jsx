@@ -4,13 +4,28 @@ import { StyledServiceWrapper, StyledTypeButton } from "./services.styles";
 import switchPrice from "../../utils/switchPrice";
 
 import Test from "../../styles/animatedElements.jsx";
+import { useInView } from "@react-spring/web";
 
 function Services({ data }) {
   const [isActive, setIsActive] = useState(false);
   const [selected, setSelected] = useState("normal");
-
+  const [ref, springs] = useInView(
+    () => ({
+      from: {
+        opacity: 0,
+        y: 100,
+      },
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+    }),
+    {
+      once: true,
+    },
+  );
   return (
-    <StyledServiceWrapper id="szolgaltatasok">
+    <StyledServiceWrapper ref={ref} style={springs} id="szolgaltatasok">
       <StyledSectionTitle>Szolgáltatásaink</StyledSectionTitle>
       <div className="services">
         <nav className="nav">

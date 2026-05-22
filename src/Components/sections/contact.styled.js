@@ -1,6 +1,7 @@
+import { animated } from "@react-spring/web";
 import styled from "styled-components";
 
-export const StyledContactWrapper = styled.section``;
+export const StyledContactWrapper = styled(animated.section)``;
 
 export const StyledContact = styled.div`
   display: flex;

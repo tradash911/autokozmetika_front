@@ -5,6 +5,7 @@ import {
 } from "./footer.styles";
 
 function Footer({ settingsData }) {
+  const year = new Date().getFullYear();
   return (
     <StyledFooter>
       <StyledFooterNav>
@@ -31,9 +32,17 @@ function Footer({ settingsData }) {
         </li>
       </StyledFooterNav>
       <StyledSocialWrapper>
-        <img src="facebook.svg" alt="Facebook elérhetőségünk." />
-        <img src="instagram.svg" alt="Instagram elérhetőségünk" />
+        <a href={settingsData[0].facebook} target="_blank">
+          <img src="facebook.svg" alt="Facebook elérhetőségünk." />
+        </a>
+        <a href={settingsData[0].instagram} target="_blank">
+          <img src="instagram.svg" alt="Instagram elérhetőségünk" />
+        </a>
+        <a href={settingsData[0].tiktok} target="_blank">
+          <img src="tiktok.svg" alt="Instagram elérhetőségünk" />
+        </a>
       </StyledSocialWrapper>
+      <p> NO DIRTY CARS {year} minden jog fenntartarva. </p>
     </StyledFooter>
   );
 }

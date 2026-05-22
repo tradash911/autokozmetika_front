@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledMain = styled.main`
   color: var(--brown);
   padding: 0 15rem;
-  margin-top: 5rem;
+  margin: 5rem 0;
   display: flex;
   flex-direction: column;
   gap: 10rem;
@@ -19,6 +19,6 @@ export const StyledMain = styled.main`
   }
   @media (max-width: 1100px) {
     padding: 0 2rem;
-    gap: 10rem;
+    gap: 20rem;
   }
 `;

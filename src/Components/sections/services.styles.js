@@ -1,6 +1,7 @@
+import { animated } from "@react-spring/web";
 import styled from "styled-components";
 
-export const StyledServiceWrapper = styled.section`
+export const StyledServiceWrapper = styled(animated.section)`
   display: flex;
   flex-direction: column;
   gap: 4rem;

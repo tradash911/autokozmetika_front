@@ -1,11 +1,26 @@
+import { useInView } from "@react-spring/web";
 import SectionTitle from "../layout/SectionTitle";
 import { StyledContact, StyledContactWrapper } from "./contact.styled";
 
 function Contact({ settingsData }) {
   const data = settingsData[0];
-
+  const [ref, springs] = useInView(
+    () => ({
+      from: {
+        opacity: 0,
+        y: 100,
+      },
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+    }),
+    {
+      once: true,
+    },
+  );
   return (
-    <StyledContactWrapper id={"kapcsolat"}>
+    <StyledContactWrapper ref={ref} style={springs} id={"kapcsolat"}>
       <SectionTitle>Foglalj Időpontot</SectionTitle>
       <StyledContact>
         <nav>

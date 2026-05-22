@@ -1,3 +1,4 @@
+import { useInView } from "@react-spring/web";
 import Counter from "../layout/Counter";
 import SectionTitle from "../layout/SectionTitle";
 import {
@@ -9,8 +10,24 @@ import {
 } from "./aboutUs.styles";
 
 function AboutUs() {
+  const [ref, springs] = useInView(
+    () => ({
+      from: {
+        opacity: 0,
+        y: 100,
+      },
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+    }),
+    {
+      once: true,
+    },
+  );
+
   return (
-    <StyledAbutUsWrapper id="bemutatkozas">
+    <StyledAbutUsWrapper ref={ref} style={springs} id="bemutatkozas">
       <StyledImage src="work.png" />
       <StyledContent>
         <div className="title-wrapper">

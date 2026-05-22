@@ -7,13 +7,16 @@ import AboutUs from "../Components/sections/AbutUs";
 import { StyledMain } from "./main.styles";
 import SectionTitle from "../Components/layout/SectionTitle";
 import Services from "../Components/sections/Services";
-import Galery from "../Components/sections/Gallery";
+import Gallery from "../Components/sections/Gallery";
 import Contact from "../Components/sections/Contact";
 import { getSettings } from "../api/settings";
 import News from "../Components/sections/News.jsx";
 import { getNews } from "../api/news.js";
+import GalleryFull from "../Components/sections/GalleryFull.jsx";
+import { useState } from "react";
 
 function Main() {
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const { isLoading, data } = useQuery({
     queryFn: getMainCategoriesWithSubcategories,
     queryKey: ["getMainCategoriesWithSubcategoires"],
@@ -34,7 +37,10 @@ function Main() {
       <StyledMain>
         <AboutUs />
         <Services data={data} />
-        <Galery />
+        <Gallery
+          isGalleryOpen={isGalleryOpen}
+          setIsGalleryOpen={setIsGalleryOpen}
+        />
         <Contact settingsData={settingsData} />
         <News newsData={newsData} />
       </StyledMain>

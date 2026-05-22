@@ -1,3 +1,4 @@
+import { animated } from "@react-spring/web";
 import styled from "styled-components";
 
 export const StyledHero = styled.header`
@@ -29,7 +30,7 @@ export const StyledHero = styled.header`
   }
 `;
 
-export const StyledH1 = styled.h1`
+export const StyledH1 = styled(animated.h1)`
   font-size: 6.734rem;
   font-family: "oswald";
   font-weight: 500;

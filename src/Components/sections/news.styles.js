@@ -1,25 +1,39 @@
+import { animated } from "@react-spring/web";
 import styled from "styled-components";
 
-export const StyledNewsWrapper = styled.section`
+export const StyledNewsWrapper = styled(animated.div)`
   .next-btn,
   .prev-btn {
     position: absolute;
     z-index: 999;
     top: 50%;
+    transform: translateY(100%);
   }
   .next-btn {
     right: -5%;
-    @media (max-width: 650px) {
-      right: -6%;
+    @media (max-width: 1200px) {
+      right: -2%;
+    }
+    @media (max-width: 444px) {
+      right: -4%;
     }
   }
   .prev-btn {
     left: -5%;
-    @media (max-width: 650px) {
-      left: -6%;
+    @media (max-width: 1200px) {
+      left: -2%;
+    }
+    @media (max-width: 444px) {
+      left: -4%;
     }
   }
   position: relative;
+  @media (max-width: 1200px) {
+    padding: 0 3rem;
+  }
+  @media (max-width: 444px) {
+    padding: 0 2rem;
+  }
   figure {
     display: grid;
     grid-template-rows: auto 3px auto 300px;

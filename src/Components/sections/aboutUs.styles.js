@@ -1,6 +1,7 @@
+import { animated } from "@react-spring/web";
 import styled from "styled-components";
 
-export const StyledAbutUsWrapper = styled.section`
+export const StyledAbutUsWrapper = styled(animated.section)`
   display: flex;
   gap: 10rem;
   @media (max-width: 1100px) {

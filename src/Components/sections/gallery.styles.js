@@ -1,12 +1,18 @@
+import { animated } from "@react-spring/web";
 import styled from "styled-components";
 
-export const StyledGaleryWrapper = styled.section`
+export const StyledGaleryWrapper = styled(animated.section)`
   display: grid;
   grid-template-columns: 100px 300px 1fr;
   grid-template-rows: 78px 95px 140px 140px 140px;
   column-gap: 3rem;
   row-gap: 3rem;
+  width: 100%;
 
+  transform: ${({ $isGalleryOpen }) =>
+    $isGalleryOpen ? "translateX(100%)" : "translateX(0%)"} !important;
+  transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+  pointer-events: ${({ $isGalleryOpen }) => ($isGalleryOpen ? "none" : "auto")};
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     display: grid;
     grid-template-rows: 78px repeat(4, auto);
@@ -31,6 +37,7 @@ export const StyledGaleryWrapper = styled.section`
     border-radius: 2px;
     grid-column: 2/4;
     height: 78px;
+
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
       grid-row: 1;
       grid-column: 1/-1;
@@ -164,4 +171,21 @@ export const StyledGaleryWrapper = styled.section`
       pointer-events: none;
     }
   }
+`;
+
+export const StyledWrapper = styled.section`
+  position: relative;
+  overflow: hidden;
+`;
+
+export const StyledInlineGallery = styled.div`
+  font-size: 18px;
+  background-color: red;
+  transform: ${({ $isGalleryOpen }) => {
+    return $isGalleryOpen ? "translateX(0%)" : "translateX(100%)";
+  }};
+  pointer-events: ${({ $isGalleryOpen }) => ($isGalleryOpen ? "auto" : "none")};
+  transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+  position: absolute;
+  inset: 0;
 `;

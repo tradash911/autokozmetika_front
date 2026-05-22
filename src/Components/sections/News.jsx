@@ -8,6 +8,7 @@ import SectionTitle from "../layout/SectionTitle";
 import { Navigation } from "swiper/modules";
 import ButtonArrow from "../../assets/button_arrow.svg?react";
 import styled from "styled-components";
+import { useInView } from "@react-spring/web";
 
 const StyledNextBtn = styled(ButtonArrow)`
   svg {
@@ -29,13 +30,28 @@ const StyledPrevBtn = styled(ButtonArrow)`
 
 const StyledNextBtnWrapper = styled.button``;
 function News({ newsData }) {
+  const [ref, springs] = useInView(
+    () => ({
+      from: {
+        opacity: 0,
+        y: 100,
+      },
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+    }),
+    {
+      once: true,
+    },
+  );
   const btn = useSwiper();
   const sorted = newsData?.sort((a, b) => {
     return a.id - b.id;
   });
 
   return (
-    <StyledNewsWrapper id={"hírek"}>
+    <StyledNewsWrapper ref={ref} style={springs} id={"hírek"}>
       <SectionTitle>Hírek</SectionTitle>
       <button className="next-btn">
         <StyledNextBtn />
