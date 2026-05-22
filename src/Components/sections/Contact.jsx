@@ -3,10 +3,9 @@ import { StyledContact, StyledContactWrapper } from "./contact.styled";
 
 function Contact({ settingsData }) {
   const data = settingsData[0];
-  console.log(data);
 
   return (
-    <StyledContactWrapper>
+    <StyledContactWrapper id={"kapcsolat"}>
       <SectionTitle>Foglalj Időpontot</SectionTitle>
       <StyledContact>
         <nav>

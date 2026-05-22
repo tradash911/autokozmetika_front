@@ -48,7 +48,24 @@ const Navbar = forwardRef(({ isOpen, setIsOpen }, ref) => {
           </a>
         </li>
         <li>
-          <a href="">Elérhetőségek</a>
+          <a
+            onClick={() => {
+              setIsOpen(false);
+            }}
+            href="#kapcsolat"
+          >
+            Elérhetőségek
+          </a>
+        </li>
+        <li>
+          <a
+            onClick={() => {
+              setIsOpen(false);
+            }}
+            href="#hírek"
+          >
+            Hírek
+          </a>
         </li>
         <li>
           <a href="">ÁSZF</a>

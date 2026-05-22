@@ -6,6 +6,28 @@ import SlideNextButton from "../layout/NextBtn";
 import SlidePrevButton from "../layout/PrevBtn";
 import SectionTitle from "../layout/SectionTitle";
 import { Navigation } from "swiper/modules";
+import ButtonArrow from "../../assets/button_arrow.svg?react";
+import styled from "styled-components";
+
+const StyledNextBtn = styled(ButtonArrow)`
+  svg {
+    width: 124px;
+    height: 124px;
+  }
+  svg,
+  path {
+    fill: var(--black);
+  }
+`;
+const StyledPrevBtn = styled(ButtonArrow)`
+  svg,
+  path {
+    fill: var(--black);
+  }
+  transform: rotate(180deg);
+`;
+
+const StyledNextBtnWrapper = styled.button``;
 function News({ newsData }) {
   const btn = useSwiper();
   const sorted = newsData?.sort((a, b) => {
@@ -13,16 +35,33 @@ function News({ newsData }) {
   });
 
   return (
-    <StyledNewsWrapper>
+    <StyledNewsWrapper id={"hírek"}>
       <SectionTitle>Hírek</SectionTitle>
-      <button className="next-btn">next </button>
-      <button className="prev-btn">prev </button>
+      <button className="next-btn">
+        <StyledNextBtn />
+      </button>
+      <button className="prev-btn">
+        <StyledPrevBtn />
+      </button>
 
       <Swiper
         spaceBetween={50}
         slidesPerView={3}
         modules={[Navigation]}
-        style={{ height: "400px" }}
+        style={{ height: "400px", marginTop: "30px" }}
+        breakpoints={{
+          1100: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          800: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          200: {
+            slidesPerView: 1,
+          },
+        }}
         onSwiper={(swiper) => {
           setTimeout(() => {
             swiper.navigation.init();

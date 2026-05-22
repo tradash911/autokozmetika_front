@@ -1,9 +1,25 @@
 import styled from "styled-components";
 
 export const StyledNewsWrapper = styled.section`
-  /*  display: flex;
-  flex-direction: column;
-  gap: 3rem; */
+  .next-btn,
+  .prev-btn {
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+  }
+  .next-btn {
+    right: -5%;
+    @media (max-width: 650px) {
+      right: -6%;
+    }
+  }
+  .prev-btn {
+    left: -5%;
+    @media (max-width: 650px) {
+      left: -6%;
+    }
+  }
+  position: relative;
   figure {
     display: grid;
     grid-template-rows: auto 3px auto 300px;

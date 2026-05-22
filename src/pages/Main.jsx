@@ -38,7 +38,7 @@ function Main() {
         <Contact settingsData={settingsData} />
         <News newsData={newsData} />
       </StyledMain>
-      <Footer />
+      <Footer settingsData={settingsData} />
     </>
   );
 }

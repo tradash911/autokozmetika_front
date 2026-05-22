@@ -54,11 +54,14 @@ const GlobalStyles = createGlobalStyle`
    --blue:#1A9BDC;
    --dark-blue:#60A5FA;
    --orange:#FD7E14;
-   --soft-black:#111111;
-   --white:#ffffff;
    --black:#0F172A;
+   --soft-black:#111111;
+   --dark-black:#1a1a1a;
+   --white:#ffffff;
    --grey:#F3F4F6;
    --dark-grey:#A3A5A9
+   
+   
 
 
    
