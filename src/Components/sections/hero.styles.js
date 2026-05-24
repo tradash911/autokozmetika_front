@@ -150,7 +150,7 @@ export const StyledCta = styled.button`
   }
 `;
 
-export const StyledDownArrow = styled.img`
+export const StyledDownArrow = styled(animated.img)`
   cursor: pointer;
   @media (max-width: 432px) {
     transform: scale(0.7);

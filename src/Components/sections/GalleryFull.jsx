@@ -17,7 +17,9 @@ function GalleryFull() {
   return (
     <GalleryFullWrapper>
       <Navbar />
-      <StyledGalleryFullWrapper></StyledGalleryFullWrapper>
+      <StyledGalleryFullWrapper>
+        <img src="work_done_01.png" alt="" />
+      </StyledGalleryFullWrapper>
       <Footer settingsData={settingsData} />
     </GalleryFullWrapper>
   );

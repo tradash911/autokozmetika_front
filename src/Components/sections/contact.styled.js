@@ -66,6 +66,7 @@ export const StyledContact = styled.div`
     background-color: var(--dark-blue);
     display: flex;
     justify-content: space-around;
+    align-items: center;
     padding: 2rem 0;
     @media (max-width: 610px) {
       flex-direction: column;
@@ -75,6 +76,9 @@ export const StyledContact = styled.div`
       padding: 5rem 0;
     }
     .arrow {
+      width: 40px;
+      height: 40px;
+
       @media (max-width: 610px) {
         transform: rotate(90deg);
       }

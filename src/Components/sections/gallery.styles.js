@@ -90,7 +90,7 @@ export const StyledGaleryWrapper = styled(animated.section)`
   p {
     grid-row: 2;
     grid-column: 3;
-    font: 500 1.8rem "montserrat";
+    font: 400 1.8rem "montserrat";
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
       grid-row: 2;

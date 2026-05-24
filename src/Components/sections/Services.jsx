@@ -35,8 +35,8 @@ function Services({ data }) {
             }}
             $active={selected === "normal"}
           >
-            <span>Személy autó</span>
-            <img src="car.svg" alt="" />
+            <span>Kis autó</span>
+            <img src="car.svg" alt="Logo kis autóhoz" />
           </StyledTypeButton>
           <StyledTypeButton
             onClick={() => {
@@ -44,8 +44,8 @@ function Services({ data }) {
             }}
             $active={selected === "medium"}
           >
-            <span>SUV</span>
-            <img src="suv_car.svg" alt="" />
+            <span>Családi autó</span>
+            <img src="suv_car.svg" alt="Logó középméretű autóhoz" />
           </StyledTypeButton>
           <StyledTypeButton
             onClick={() => {
@@ -53,8 +53,8 @@ function Services({ data }) {
             }}
             $active={selected === "large"}
           >
-            <span>Nagy autó</span>
-            <img src="big_car.svg" alt="" />
+            <span>SUV</span>
+            <img src="big_car.svg" alt="Logó nagyméretű autóhoz" />
           </StyledTypeButton>
         </nav>
         <div className="category-wrapper">
