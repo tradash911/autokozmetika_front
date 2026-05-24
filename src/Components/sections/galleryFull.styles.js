@@ -6,3 +6,7 @@ export const GalleryFullWrapper = styled.div`
   height: 100%;
   position: absolute;
 `;
+
+export const StyledGalleryFullWrapper = styled.main`
+  min-height: 100dvh;
+`;

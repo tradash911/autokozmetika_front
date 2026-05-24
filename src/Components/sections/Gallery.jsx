@@ -4,6 +4,7 @@ import {
   StyledInlineGallery,
   StyledWrapper,
 } from "./gallery.styles";
+import Footer from "./Footer";
 
 function Gallery({ isGalleryOpen, setIsGalleryOpen }) {
   console.log(isGalleryOpen);

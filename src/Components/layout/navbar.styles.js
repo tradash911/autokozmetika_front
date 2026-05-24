@@ -43,6 +43,7 @@ export const StyledMenu = styled.ul`
     transition: transform 0.3s ease-in-out; */
     padding: 5px 10px;
     border-radius: 2px;
+    cursor: pointer;
     &:hover {
       /* transform: scale(1.1); */
       color: var(--white);

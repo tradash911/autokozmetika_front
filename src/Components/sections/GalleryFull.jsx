@@ -1,7 +1,26 @@
-import { GalleryFullWrapper } from "./galleryFull.styles";
+import { useQuery } from "@tanstack/react-query";
+import { getSettings } from "../../api/settings";
+import Navbar from "../layout/Navbar";
+import Footer from "./Footer";
+import {
+  GalleryFullWrapper,
+  StyledGalleryFullWrapper,
+} from "./galleryFull.styles";
+import { StyledGaleryWrapper } from "./gallery.styles";
 
 function GalleryFull() {
-  return <GalleryFullWrapper>galréia</GalleryFullWrapper>;
+  const { isLoading: isSettingsLoading, data: settingsData } = useQuery({
+    queryFn: getSettings,
+    queryKey: ["getSettings"],
+  });
+  if (isSettingsLoading) return <h1>das</h1>;
+  return (
+    <GalleryFullWrapper>
+      <Navbar />
+      <StyledGalleryFullWrapper></StyledGalleryFullWrapper>
+      <Footer settingsData={settingsData} />
+    </GalleryFullWrapper>
+  );
 }
 
 export default GalleryFull;

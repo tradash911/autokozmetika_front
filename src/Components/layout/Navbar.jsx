@@ -4,8 +4,11 @@ import {
   StyledMenu,
   StyledNavbar,
 } from "./navbar.styles";
+import { useNavigate } from "react-router";
+import { HashLink } from "react-router-hash-link";
 
 const Navbar = forwardRef(({ isOpen, setIsOpen }, ref) => {
+  const navigate = useNavigate();
   return (
     <StyledNavbar $isOpen={isOpen} ref={ref}>
       <StyledCloseMobilMenu
@@ -17,55 +20,64 @@ const Navbar = forwardRef(({ isOpen, setIsOpen }, ref) => {
       />
       <div className="logo">LOGO</div>
       <StyledMenu>
-        <li>
-          <a
-            onClick={() => {
-              setIsOpen(false);
-            }}
-            href="#bemutatkozas"
-          >
+        <li
+          onClick={() => {
+            setIsOpen(false);
+          }}
+        >
+          <HashLink smooth to={"/#bemutatkozas"}>
             Bemutatkozás
-          </a>
+          </HashLink>
         </li>
-        <li>
-          <a
-            onClick={() => {
-              setIsOpen(false);
-            }}
-            href="#szolgaltatasok"
-          >
+        <li
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+        >
+          <HashLink smooth to={"/#szolgaltatasok"}>
             Szolgáltatások
-          </a>
+          </HashLink>
         </li>
-        <li>
-          <a
+        <li
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+        >
+          {/* <HashLink
             onClick={() => {
-              setIsOpen(false);
+              setIsOpen(!isOpen);
             }}
-            href="#galéria"
+            smooth
+            to={"/#galéria"}
+          >
+            Galéria
+          </HashLink> */}
+          <a
+            onClick={(e) => {
+              navigate("/galéria");
+            }}
           >
             Galéria
           </a>
         </li>
-        <li>
-          <a
-            onClick={() => {
-              setIsOpen(false);
-            }}
-            href="#kapcsolat"
-          >
-            Elérhetőségek
-          </a>
+        <li
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+        >
+          <HashLink smooth to={"/#kapcsolat"}>
+            Kapcsolat
+          </HashLink>
         </li>
-        <li>
-          <a
-            onClick={() => {
-              setIsOpen(false);
-            }}
-            href="#hírek"
-          >
+        <li
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+        >
+          <HashLink smooth to={"/#hírek"}>
             Hírek
-          </a>
+          </HashLink>
         </li>
         <li>
           <a href="">ÁSZF</a>
