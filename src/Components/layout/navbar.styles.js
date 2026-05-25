@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledNavbar = styled.nav`
   height: 71px;
-  background-color: #ffffff9c;
+  background-color: var(--grey);
   display: flex;
   align-items: center;
   position: absolute;
@@ -28,29 +28,21 @@ export const StyledNavbar = styled.nav`
 `;
 
 export const StyledMenu = styled.ul`
-  font-size: 1.8rem;
-  font-family: "oswald";
+  font: 500 1.8rem "oswald";
   text-transform: uppercase;
   letter-spacing: 5%;
-  font-weight: 500;
   color: var(--white);
   display: flex;
   gap: 4rem;
   margin: 0 auto;
   color: var(--black);
   li {
-    /* transform: scale(1);
-    transition: transform 0.3s ease-in-out; */
     padding: 5px 10px;
     border-radius: 2px;
     cursor: pointer;
     &:hover {
-      /* transform: scale(1.1); */
       color: var(--white);
       background-color: var(--orange);
-      &:after {
-        /* ontent: url("/button_arrow.svg"); */
-      }
     }
   }
   @media (max-width: 1400px) {
@@ -58,6 +50,7 @@ export const StyledMenu = styled.ul`
   }
   @media (max-width: 1100px) {
     flex-direction: column;
+    gap: 2rem;
   }
 `;
 

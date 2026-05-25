@@ -22,7 +22,8 @@
     "react-router-hash-link": "^2.4.3",
     "styled-components": "^6.4.1",
     "swiper": "^12.1.4",
-    "vite-plugin-svgr": "^5.2.0"
+    "vite-plugin-svgr": "^5.2.0",
+    "yet-another-react-lightbox": "^3.32.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

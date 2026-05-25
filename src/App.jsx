@@ -22,14 +22,21 @@ const queryClient = new QueryClient({
   },
 });
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Main />}></Route>
-            <Route path="/galéria" element={<GalleryFull />} />
+            <Route
+              path="/"
+              element={<Main isOpen={isOpen} setIsopen={setIsOpen} />}
+            ></Route>
+            <Route
+              path="/galéria"
+              element={<GalleryFull isOpen={isOpen} setIsOpen={setIsOpen} />}
+            />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>

@@ -14,7 +14,6 @@ export default function Counter({ end, duration = 2, label, subtitle }) {
           if (!countUp.error) {
             countUp.start();
             setHasStarted(true);
-            console.log("itt vagyok");
           }
         }
       },

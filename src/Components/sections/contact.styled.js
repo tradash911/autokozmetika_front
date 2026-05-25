@@ -1,7 +1,14 @@
 import { animated } from "@react-spring/web";
 import styled from "styled-components";
 
-export const StyledContactWrapper = styled(animated.section)``;
+export const StyledContactWrapper = styled(animated.section)`
+  @media (max-width: 610px) {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4rem;
+  }
+`;
 
 export const StyledContact = styled.div`
   display: flex;
@@ -16,7 +23,7 @@ export const StyledContact = styled.div`
       flex-direction: column;
       justify-content: start;
       padding: 1rem 0;
-      gap: 6rem;
+      gap: 8rem;
     }
     figure {
       display: grid;

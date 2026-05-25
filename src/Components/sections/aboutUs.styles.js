@@ -8,7 +8,7 @@ export const StyledAbutUsWrapper = styled(animated.section)`
     gap: 5rem;
   }
   @media (max-width: 1000px) {
-    gap: 2rem;
+    gap: 4rem;
   }
   @media (max-width: 924px) {
     flex-direction: column-reverse;

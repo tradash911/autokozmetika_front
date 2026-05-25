@@ -12,16 +12,18 @@ import Navbar from "../layout/Navbar";
 import { useEffect, useRef, useState } from "react";
 import { useSpring } from "@react-spring/web";
 import { transform } from "motion";
+import Hamburger from "../layout/Hamburger";
 
-function Hero() {
-  const [isOpen, setIsOpen] = useState(false);
+function Hero({ isOpen, setIsOpen }) {
+  /* const [isOpen, setIsOpen] = useState(false); */
   const navRef = useRef(null);
-  const styles = useSpring({
+  const fadeIn = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
     config: {
       tension: 120,
       friction: 14,
+      duration: 400,
     },
   });
   useEffect(() => {
@@ -38,17 +40,17 @@ function Hero() {
     };
   });
   return (
-    <StyledHero>
+    <StyledHero style={fadeIn}>
       <Navbar isOpen={isOpen} setIsOpen={setIsOpen} ref={navRef} />
-      <StyledHamburger
+      <Hamburger
+        color="#ffffff"
         onClick={(e) => {
           e.stopPropagation;
           setIsOpen(!isOpen);
         }}
-        src="hamburger.svg"
-        alt="Open mobile menu"
       />
-      <StyledH1 style={styles}>
+
+      <StyledH1 style={fadeIn}>
         Ahol az autód visszanyeri a <span>ragyogását.</span>
       </StyledH1>
       <StyledText>

@@ -8,11 +8,6 @@ export const StyledGaleryWrapper = styled(animated.section)`
   column-gap: 3rem;
   row-gap: 3rem;
   width: 100%;
-
-  transform: ${({ $isGalleryOpen }) =>
-    $isGalleryOpen ? "translateX(100%)" : "translateX(0%)"} !important;
-  transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1);
-  pointer-events: ${({ $isGalleryOpen }) => ($isGalleryOpen ? "none" : "auto")};
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     display: grid;
     grid-template-rows: 78px repeat(4, auto);

@@ -67,3 +67,7 @@ export const StyledNewsWrapper = styled(animated.div)`
     }
   }
 `;
+
+export const StyledNewsEmptyWrapper = styled.div`
+  font: 500 2.5rem "montserrat";
+`;

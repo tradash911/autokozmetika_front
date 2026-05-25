@@ -22,7 +22,10 @@ const Navbar = forwardRef(({ isOpen, setIsOpen }, ref) => {
       <StyledMenu>
         <li
           onClick={() => {
-            setIsOpen(false);
+            setIsOpen(!isOpen);
+            console.log("hey");
+
+            console.log(setIsOpen);
           }}
         >
           <HashLink smooth to={"/#bemutatkozas"}>

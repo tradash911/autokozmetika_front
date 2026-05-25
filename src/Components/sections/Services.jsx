@@ -59,23 +59,33 @@ function Services({ data }) {
         </nav>
         <div className="category-wrapper">
           {data.map((data, index) => {
+            console.log(data);
+            const isCategoryHaveActiveCat = data.subcategory.every(
+              (item) => item.is_active === true,
+            );
             return (
-              <div className="category" key={index}>
-                <h1> {data.main_category_name}</h1>
-                <ul>
-                  {data.subcategory.map((subcat, index) => (
-                    <li key={index}>
-                      <img src="corner_arrow.svg" alt="" />
-                      <div className="wrapper">
-                        <span>{subcat.subcategory_name}</span>{" "}
-                        <span className="price">
-                          {switchPrice(selected, subcat)} Forint
-                        </span>{" "}
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              isCategoryHaveActiveCat && (
+                <div className="category" key={index}>
+                  <h1> {data.main_category_name}</h1>
+                  <ul>
+                    {data.subcategory.map((subcat, index) => {
+                      return (
+                        subcat.is_active && (
+                          <li key={index}>
+                            <img src="corner_arrow.svg" alt="" />
+                            <div className="wrapper">
+                              <span>{subcat.subcategory_name}</span>
+                              <span className="price">
+                                {switchPrice(selected, subcat)} Forint
+                              </span>
+                            </div>
+                          </li>
+                        )
+                      );
+                    })}
+                  </ul>
+                </div>
+              )
             );
           })}
         </div>

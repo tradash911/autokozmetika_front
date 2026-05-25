@@ -89,7 +89,7 @@ function News({ newsData }) {
           prevEl: ".prev-btn",
         }}
         onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        onSwiper={(swiper) => console.log()}
       >
         {sorted.map((data) => {
           const date = new Date(data.created_at);

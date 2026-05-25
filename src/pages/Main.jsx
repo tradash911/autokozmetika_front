@@ -15,8 +15,9 @@ import { getNews } from "../api/news.js";
 import GalleryFull from "../Components/sections/GalleryFull.jsx";
 import { useState } from "react";
 
-function Main() {
+function Main({ isOpen, setIsopen }) {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+
   const { isLoading, data } = useQuery({
     queryFn: getMainCategoriesWithSubcategories,
     queryKey: ["getMainCategoriesWithSubcategoires"],
@@ -29,11 +30,12 @@ function Main() {
     queryFn: getNews,
     queryKey: ["getNews"],
   });
+  console.log(newsData);
 
   if (isLoading || isSettingsLoading || isNewsLoading) return <h1>das</h1>;
   return (
     <>
-      <Hero />
+      <Hero isOpen={isOpen} setIsOpen={setIsopen} />
       <StyledMain>
         <AboutUs />
         <Services data={data} />

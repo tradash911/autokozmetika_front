@@ -1,7 +1,7 @@
 import { animated } from "@react-spring/web";
 import styled from "styled-components";
 
-export const StyledHero = styled.header`
+export const StyledHero = styled(animated.header)`
   background-color: red;
   height: 100dvh;
   background:
