@@ -52,6 +52,7 @@ export const StyledH1 = styled(animated.h1)`
       bottom: 0;
       z-index: -1;
       clip-path: polygon(0 0, 93% 0, 100% 100%, 0% 100%);
+      border-radius: 2px;
     }
   }
   @media (max-width: 1400px) {
@@ -73,7 +74,7 @@ export const StyledH1 = styled(animated.h1)`
     font-size: 6rem;
   }
   @media (max-width: 432px) {
-    font-size: 5rem;
+    font-size: 4.5rem;
     width: 94%;
   }
 
@@ -136,6 +137,7 @@ export const StyledCta = styled.button`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  border-radius: 2px;
   cursor: pointer;
 
   &:hover {
@@ -153,7 +155,7 @@ export const StyledCta = styled.button`
 export const StyledDownArrow = styled(animated.img)`
   cursor: pointer;
   @media (max-width: 432px) {
-    transform: scale(0.7);
+    transform: scale(5);
   }
 `;
 

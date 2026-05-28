@@ -66,6 +66,7 @@ export const StyledGaleryWrapper = styled(animated.section)`
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    border-radius: 2px;
     cursor: pointer;
     grid-column: 2;
     grid-row: 2;
@@ -101,9 +102,9 @@ export const StyledGaleryWrapper = styled(animated.section)`
     text-transform: uppercase;
     letter-spacing: 25%;
     color: transparent;
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: 1px var(--black);
     font-family: "oswald";
-    opacity: 25%;
+    opacity: 80%;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
       display: none;

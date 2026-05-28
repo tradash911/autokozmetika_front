@@ -26,6 +26,18 @@ function Hero({ isOpen, setIsOpen }) {
       duration: 400,
     },
   });
+  const move = useSpring({
+    from: { transform: "translateY(0px)" },
+    to: async (next) => {
+      while (true) {
+        await next({ transform: "translateY(10px)" });
+        await next({ transform: "translateY(0px)" });
+      }
+    },
+    config: {
+      duration: 1200, // lassúság (nagyobb = lassabb)
+    },
+  });
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (navRef.current && !navRef.current.contains(e.target)) {
@@ -63,7 +75,7 @@ function Hero({ isOpen, setIsOpen }) {
         </StyledCta>
       </a>
       <a href="#bemutatkozas">
-        <StyledDownArrow src="down_arrow.svg" alt="" />
+        <StyledDownArrow style={move} src="down_arrow.svg" alt="" />
       </a>
     </StyledHero>
   );

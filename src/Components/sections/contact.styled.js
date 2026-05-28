@@ -1,13 +1,11 @@
 import { animated } from "@react-spring/web";
+import { style } from "motion/react-client";
 import styled from "styled-components";
 
 export const StyledContactWrapper = styled(animated.section)`
-  @media (max-width: 610px) {
-    display: flex;
-    flex-direction: column;
-
-    gap: 4rem;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 `;
 
 export const StyledContact = styled.div`
@@ -75,6 +73,7 @@ export const StyledContact = styled.div`
     justify-content: space-around;
     align-items: center;
     padding: 2rem 0;
+    border-radius: 2px;
     @media (max-width: 610px) {
       flex-direction: column;
       justify-content: center;
@@ -146,3 +145,20 @@ export const StyledContact = styled.div`
     }
   }
 `;
+
+export const StyledFAQWrapper = styled.div`
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .title {
+    padding: 2rem;
+    background-color: var(--blue);
+    font: 500 2.5rem "oswald";
+    color: var(--white);
+    border-radius: 2px;
+  }
+`;
+
+export const StyledPhoneIcon = styled(animated.div)``;

@@ -40,6 +40,7 @@ export const StyledNewsWrapper = styled(animated.div)`
     background-color: var(--grey);
     padding: 1rem;
     row-gap: 1rem;
+    border-radius: 2px;
     div {
       display: flex;
       align-items: baseline;
@@ -54,6 +55,7 @@ export const StyledNewsWrapper = styled(animated.div)`
     }
     .line {
       background-color: var(--dark-grey);
+      border-radius: 2px;
     }
     p {
       font: 500 1.7rem "montserrat";

@@ -25,6 +25,25 @@ function Gallery({ isGalleryOpen, setIsGalleryOpen }) {
     },
   );
 
+  const [ref2, move] = useInView(
+    () => ({
+      from: {
+        opacity: 0,
+        y: 100,
+      },
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+      config: {
+        duration: 3000, // ✅ IDE kell
+      },
+    }),
+    {
+      once: true,
+    },
+  );
+
   return (
     <StyledGaleryWrapper
       ref={ref}
@@ -35,7 +54,9 @@ function Gallery({ isGalleryOpen, setIsGalleryOpen }) {
       <div className="title-wrapper">
         <h1>Munkáink</h1>
       </div>
-      <h2>no dirty cars</h2>
+      <h2 ref={ref2} style={move}>
+        no dirty cars
+      </h2>
       <button
         onClick={() => {
           navigate("/galéria");

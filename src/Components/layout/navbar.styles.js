@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
 export const StyledNavbar = styled.nav`
-  height: 71px;
-  background-color: var(--grey);
+  height: 81px;
+  background-color: #f3f4f6b4;
   display: flex;
   align-items: center;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 55;
+
   @media (max-width: 1100px) {
     position: fixed;
     top: 0;

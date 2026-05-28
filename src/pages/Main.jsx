@@ -14,6 +14,7 @@ import News from "../Components/sections/News.jsx";
 import { getNews } from "../api/news.js";
 import GalleryFull from "../Components/sections/GalleryFull.jsx";
 import { useState } from "react";
+import LoadingPage from "./LoadingPage.jsx";
 
 function Main({ isOpen, setIsopen }) {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
@@ -32,7 +33,7 @@ function Main({ isOpen, setIsopen }) {
   });
   console.log(newsData);
 
-  if (isLoading || isSettingsLoading || isNewsLoading) return <h1>das</h1>;
+  if (isLoading || isSettingsLoading || isNewsLoading) return <LoadingPage />;
   return (
     <>
       <Hero isOpen={isOpen} setIsOpen={setIsopen} />

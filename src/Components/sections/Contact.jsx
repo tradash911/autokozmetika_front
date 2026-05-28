@@ -1,9 +1,34 @@
 import { useInView } from "@react-spring/web";
 import SectionTitle from "../layout/SectionTitle";
-import { StyledContact, StyledContactWrapper } from "./contact.styled";
+import {
+  StyledContact,
+  StyledContactWrapper,
+  StyledFAQWrapper,
+  StyledPhoneIcon,
+} from "./contact.styled";
+import FAQ from "../layout/Accordion";
+import { useSpring } from "framer-motion";
 
 function Contact({ settingsData }) {
   const data = settingsData[0];
+  const faqArr = [
+    {
+      title: "Kell időpontot foglalnom?",
+      body: "Igen, előzetes bejelentkezés szükséges, hogy biztosítani tudjuk a megfelelő időt és figyelmet az autód számára.",
+    },
+    {
+      title: "Mennyibe kerül egy autókozmetika?",
+      body: "Az ár az autó méretétől és a választott szolgáltatástól függ. Pontos árakat az árlistában találsz.",
+    },
+    {
+      title: "Esőben is érdemes hozni az autót?",
+      body: "Igen, a belső tisztítás ilyenkor is elvégezhető, a külső tisztítás eredménye viszont rövidebb ideig maradhat tartós.",
+    },
+    {
+      title: "Milyen szereket használtok?",
+      body: "Minőségi, autóipari tisztítószereket használunk, amelyek kíméletesek a felületekhez, mégis hatékonyak.",
+    },
+  ];
   const [ref, springs] = useInView(
     () => ({
       from: {
@@ -19,6 +44,7 @@ function Contact({ settingsData }) {
       once: true,
     },
   );
+
   return (
     <StyledContactWrapper ref={ref} style={springs} id={"kapcsolat"}>
       <SectionTitle>Foglalj Időpontot</SectionTitle>
@@ -26,21 +52,21 @@ function Contact({ settingsData }) {
         <nav>
           <a href={`tel:${data?.phone}`}>
             <figure>
-              <img src="phone.svg" alt="" />
+              <img src="phone.svg" alt="Hívj minket telefonon" />
               <figcaption>Telefonon</figcaption>
               <span>{data.phone}</span>
             </figure>
           </a>
           <a href="https://maps.app.goo.gl/ertNTX9QkVE5RExW7" target="_blank">
             <figure>
-              <img src="map_pin.svg" alt="" />
+              <img src="map_pin.svg" alt="Keress minket személyesen" />
               <figcaption>Személyesen</figcaption>
               <span>{data.address}</span>
             </figure>
           </a>
           <a href={`mailto:${data?.email}`}>
             <figure>
-              <img src="mail.svg" alt="" />
+              <img src="mail.svg" alt="Írj nekünk emailt" />
               <figcaption>Emailben</figcaption>
               <span>{data.email}</span>
             </figure>
@@ -49,18 +75,27 @@ function Contact({ settingsData }) {
         <div className="work-flow">
           <figure>
             <figcaption>Időpont egyeztetés</figcaption>
-            <img src="clock.svg" alt="" />
+            <img src="clock.svg" alt="Óra ikon az időpont egyeztetéshez" />
           </figure>
+
           <img className="arrow" src="arrow_short.svg" alt="" />
+
           <figure>
             <figcaption>Tisztítás / Polírozás</figcaption>
-            <img src="droplets.svg" alt="" />
+            <img
+              src="droplets.svg"
+              alt="Vízcseppek ikon a tisztítás és polírozás jelzésére"
+            />
           </figure>
+
           <img className="arrow" src="arrow_short.svg" alt="" />
 
           <figure>
             <figcaption>Átadás</figcaption>
-            <img src="sparkles.svg" alt="" />
+            <img
+              src="sparkles.svg"
+              alt="Csillogás ikon a kész munka átadásához"
+            />
           </figure>
         </div>
         <div className="wrapper">
@@ -108,6 +143,12 @@ function Contact({ settingsData }) {
           ></iframe>
         </div>
       </StyledContact>
+      <StyledFAQWrapper>
+        <h3 className="title">Gyakran ismételt kérdések</h3>
+        {faqArr.map((item, index) => (
+          <FAQ key={index} title={item.title} body={item.body} />
+        ))}
+      </StyledFAQWrapper>
     </StyledContactWrapper>
   );
 }

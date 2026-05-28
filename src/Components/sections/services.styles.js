@@ -11,6 +11,7 @@ export const StyledServiceWrapper = styled(animated.section)`
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    border-radius: 2px;
     @media (max-width: 700px) {
       padding: 5rem 3rem 3rem 3rem;
     }
@@ -58,7 +59,7 @@ export const StyledTypeButton = styled.button`
   border-radius: 2px;
   width: 160px;
   background-color: ${({ $active }) =>
-    $active ? "var(--orange)" : "var(--dark-grey)"};
+    $active ? "var(--orange)" : "var(--black)"};
   img {
     margin: 0 auto;
   }
